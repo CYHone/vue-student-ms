@@ -1,15 +1,52 @@
 <script setup>
 import { ref } from 'vue'
+//import axios from '@/utils/axios-config.js'
+import axios from 'axios'
+import { ElMessage } from 'element-plus'
 const ruleForm = ref({
-  ID: '',
+  id: '',
   name: '',
   className: '',
   phone: '',
-  Email: '',
+  email: '',
   password: '',
   confirmPassword: '',
-  verificationCode: ''
+  code: ''
 })
+
+const sendVerificationCode = () => {
+  const encodedEmail = encodeURIComponent(ruleForm.value.Email)
+  console.log(encodedEmail)
+
+  axios
+    .post('http://127.0.0.1:8080/student/registerCode', encodedEmail, {
+      withCredentials: true // 添加这一行配置
+    })
+    .then((response) => {
+      console.log(response.data)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+}
+const doRegister = () => {
+  console.log(ruleForm.value)
+  axios
+    .post('http://127.0.0.1:8080/student/register', ruleForm.value, {
+      withCredentials: true // 添加这一行配置
+    })
+    .then((response) => {
+      console.log(response.data)
+      if (response.data.code === 0) {
+        ElMessage({ type: 'success', message: '注册成功' })
+      } else {
+        ElMessage({ type: 'error', message: '注册失败' })
+      }
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+}
 </script>
 
 <template>
@@ -35,8 +72,8 @@ const ruleForm = ref({
                 <el-input v-model="ruleForm.name" placeholder="请输入姓名"></el-input>
               </el-form-item>
 
-              <el-form-item label="学号" prop="ID">
-                <el-input v-model="ruleForm.ID" placeholder="请输入学号"></el-input>
+              <el-form-item label="学号" prop="id">
+                <el-input v-model="ruleForm.id" placeholder="请输入学号"></el-input>
               </el-form-item>
               <el-form-item label="班级" prop="className">
                 <el-input v-model="ruleForm.className" placeholder="请输入班级"></el-input>
@@ -46,8 +83,8 @@ const ruleForm = ref({
                 <el-input v-model="ruleForm.phone" placeholder="请输入手机号"></el-input>
               </el-form-item>
 
-              <el-form-item label="邮箱" prop="Email">
-                <el-input v-model="ruleForm.Email" placeholder="请输入邮箱"></el-input>
+              <el-form-item label="邮箱" prop="email">
+                <el-input v-model="ruleForm.email" placeholder="请输入邮箱"></el-input>
               </el-form-item>
               <el-form-item label="密码" prop="password">
                 <el-input
@@ -63,9 +100,9 @@ const ruleForm = ref({
                   show-password
                 ></el-input>
               </el-form-item>
-              <el-form-item label="验证码" prop="verificationCode">
+              <el-form-item label="验证码" prop="code">
                 <el-input
-                  v-model="ruleForm.verificationCode"
+                  v-model="ruleForm.code"
                   :style="{ width: '120px' }"
                   placeholder="邮箱验证码"
                 ></el-input>

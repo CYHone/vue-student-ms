@@ -15,7 +15,7 @@ const sendVerificationCode = () => {
   console.log(encodedEmail)
 
   axios
-    .post('http://127.0.0.1:10086/registerCode', encodedEmail, {
+    .post('http://127.0.0.1:8080/student/registerCode', encodedEmail, {
       withCredentials: true // 添加这一行配置
     })
     .then((response) => {
