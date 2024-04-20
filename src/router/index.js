@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import loginView from '../views/login/loginView.vue'
 import registerView from '@/views/login/registerView.vue'
-import testView from '../views/login/testView.vue'
+//import testView from '../views/login/testView.vue'
+import studentIndex from '@/views/Student/indexView.vue'
+import studentHome from '@/views/Student/homeView.vue'
+import updateStudentInfo from '@/views/Student/components/updateInfo.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -25,10 +28,22 @@ const router = createRouter({
       component: registerView
     },
     {
-      // test
-      path: '/test',
-      name: 'test',
-      component: testView
+      //学生主页
+      path: '/studentIndex',
+      name: 'studentIndex',
+      component: studentIndex,
+      children: [
+        {
+          path: '/studentHome',
+          name: 'studentHome',
+          component: studentHome
+        },
+        {
+          path: '/updateStudentInfo',
+          name: 'updateStudentInfo',
+          component: updateStudentInfo
+        }
+      ]
     }
   ]
 })

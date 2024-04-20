@@ -105,9 +105,15 @@ const submitForm = () => {
     axios
       .post('student/login', requestData)
       .then(function (response) {
-        console.log('学生登录信息：' + response.data)
-        if (response.data == true) {
+        console.log('响应数据：', response.data)
+        if (response.data !== null) {
           ElMessage({ type: 'success', message: '登录成功' })
+          localStorage.setItem('name', response.data.name)
+          localStorage.setItem('email', response.data.email)
+          localStorage.setItem('className', response.data.className)
+          localStorage.setItem('phone', response.data.phone)
+          localStorage.setItem('id', response.data.id)
+          router.push('/studentIndex')
         } else {
           ElMessage({ type: 'error', message: '登录失败' })
         }

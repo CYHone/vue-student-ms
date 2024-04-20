@@ -15,7 +15,7 @@ const ruleForm = ref({
 })
 
 const sendVerificationCode = () => {
-  const encodedEmail = encodeURIComponent(ruleForm.value.Email)
+  const encodedEmail = encodeURIComponent(ruleForm.value.email)
   console.log(encodedEmail)
 
   axios
@@ -50,9 +50,9 @@ const doRegister = () => {
 </script>
 
 <template>
-  <div>
+  <div class="register-container">
     <el-container>
-      <el-header style="background-color: skyblue; height: 100px">
+      <el-header style="height: 50px">
         <div style="text-align: center; font-size: 40px; font-weight: bolder">学生信息管理系统</div>
       </el-header>
 
@@ -131,6 +131,9 @@ const doRegister = () => {
 </template>
 
 <style scoped>
+.register-container {
+  background: url('@/assets/login-bg.jpg');
+}
 .register-module {
   max-width: 400px;
   height: 600px;
