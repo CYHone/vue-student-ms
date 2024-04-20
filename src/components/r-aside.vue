@@ -50,7 +50,9 @@
             <router-link to="/updateStudentInfo">
               <el-menu-item index="5-1">信息修改</el-menu-item>
             </router-link>
-            <el-menu-item index="5-2">头像上传</el-menu-item>
+            <router-link to="/updateImage">
+              <el-menu-item index="5-2">头像上传</el-menu-item>
+            </router-link>
           </el-sub-menu>
         </el-menu>
       </el-scrollbar>
