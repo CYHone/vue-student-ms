@@ -1,28 +1,24 @@
 <template>
   <el-card>
-    <el-descriptions title="用户信息">
-      <el-descriptions-item label="用户 id">{{ id }}</el-descriptions-item>
-      <el-descriptions-item label="用户名">{{ name }}</el-descriptions-item>
-      <el-descriptions-item label="用户类型">
-        <el-tag size="small">{{ type }}</el-tag>
-      </el-descriptions-item>
+    <el-descriptions title="我的信息">
+      <el-descriptions-item label="学号:">{{ id }}</el-descriptions-item>
+      <el-descriptions-item label="姓名:">{{ name }}</el-descriptions-item>
+      <el-descriptions-item label="班级:">{{ className }} </el-descriptions-item>
     </el-descriptions>
   </el-card>
 </template>
 
 <script>
 export default {
-  name: "infoCard",
+  name: 'infoCard',
   data() {
     return {
-      id: sessionStorage.getItem('type') === 'teacher' ? sessionStorage.getItem('tid') : sessionStorage.getItem('sid'),
-      name: sessionStorage.getItem('name'),
-      type: sessionStorage.getItem('type')
+      id: localStorage.getItem('id'),
+      name: localStorage.getItem('name'),
+      className: localStorage.getItem('className')
     }
   }
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

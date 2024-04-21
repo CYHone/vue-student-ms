@@ -2,7 +2,7 @@
   <div>
     <el-aside
       width="200px"
-      style="background-color: #304057; height: 1000px; border: 1px solid #eee"
+      style="background-color: #304057; height: 700px; border: 1px solid #eee"
     >
       <el-scrollbar>
         <!-- <el-menu :default-openeds="['1', '3']" style="background-color: #304057"> -->
@@ -21,10 +21,14 @@
           <el-sub-menu index="2">
             <template #title>
               <el-icon style="color: #ffffff"><Menu /></el-icon
-              ><span style="color: #ffffff">选课</span>
+              ><span style="color: #ffffff">选课管理</span>
             </template>
-            <el-menu-item index="2-1">Option 1</el-menu-item>
-            <el-menu-item index="2-2">Option 2</el-menu-item>
+            <router-link to="/selectCourse">
+              <el-menu-item index="2-1">选课</el-menu-item>
+            </router-link>
+            <router-link to="/courseView">
+              <el-menu-item index="2-2">我的课表</el-menu-item>
+            </router-link>
           </el-sub-menu>
           <el-sub-menu index="3">
             <template #title>

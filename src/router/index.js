@@ -6,6 +6,8 @@ import studentIndex from '@/views/Student/indexView.vue'
 import studentHome from '@/views/Student/homeView.vue'
 import updateStudentInfo from '@/views/Student/components/updateInfo.vue'
 import updateImage from '@/views/Student/components/updateImage.vue'
+import selectCourse from '@/views/Student/components/selectCourse.vue'
+import courseView from '@/views/Student/components/courseView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -48,6 +50,18 @@ const router = createRouter({
           path: '/updateImage',
           name: 'updateImage',
           component: updateImage
+        },
+        // 选课
+        {
+          path: '/selectCourse',
+          name: 'selectCourse',
+          component: selectCourse
+        },
+        // 课程
+        {
+          path: '/courseView',
+          name: 'courseView',
+          component: courseView
         }
       ]
     }

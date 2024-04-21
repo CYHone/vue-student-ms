@@ -17,8 +17,11 @@
             <!-- 显示已上传的头像图片 -->
             <img v-if="ruleForm.avatar" :src="ruleForm.avatar" class="avatar" />
             <!-- 如果没有上传头像，则显示上传图标 -->
-            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+            <i v-else class="el-icon-plus avatar-uploader-icon">点击修改图片</i>
           </el-upload>
+        </el-card>
+        <el-card style="width: 500px">
+          <img :src="ruleForm.currentImage" class="avatar" />
         </el-card>
       </el-main>
     </el-container>
@@ -30,7 +33,8 @@ import { ref } from 'vue'
 
 // 假设您有一个名为 ruleForm 的响应式表单
 const ruleForm = ref({
-  avatar: null // 头像图片的 URL
+  avatar: null,
+  currentImage: localStorage.getItem('imageInfo')
 })
 
 // 处理上传成功的回调函数
@@ -38,6 +42,8 @@ const handleAvatarSuccess = (res) => {
   // 如果返回的数据是字符串，则认为是上传成功后的头像 URL
   if (typeof res === 'string') {
     ruleForm.value.avatar = res
+    //console.log('上传成功，头像 URL:', res)
+    localStorage.setItem('imageInfo', res)
   } else {
     // 如果返回的数据格式不符合预期，则输出错误信息
     console.error('上传成功，但返回的数据格式不符合预期:', res)

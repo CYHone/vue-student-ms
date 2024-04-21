@@ -1,17 +1,25 @@
 <template>
   <div>
-    <el-container>
+    <el-container class="container">
       <el-main>
-        <h1>学生管理系统</h1>
         <infoCard></infoCard>
-        <el-card style="width: 100%; margin-top: 10px">
-          <p><i class="el-icon-s-home" style="margin-right: 18px"></i>项目名：学生管理系统</p>
-          <p><i class="el-icon-s-custom" style="margin-right: 18px"></i>作者：auggie</p>
-          <p><i class="el-icon-location-outline" style="margin-right: 18px"></i>HMU</p>
-          <p><i class="el-icon-chat-round" style="margin-right: 18px"></i>QQ: 1434919953</p>
-          <p><i class="el-icon-error" style="margin-right: 18px"></i>仅供学习，禁止抄袭</p>
+        <el-card>
+          <!-- 轮播图容器 -->
+          <div class="carousel-container">
+            <!-- 轮播图内容 -->
+            <div class="block text-center">
+              <!-- <span class="demonstration">轮播图</span> -->
+              <!-- 轮播图组件 -->
+              <el-carousel height="600px" motion-blur :interval="2000">
+                <el-carousel-item v-for="(item, index) in imageList" :key="index">
+                  <!-- 图片 -->
+                  <img :src="item.src" :alt="'Slide ' + index" class="carousel-image" />
+                </el-carousel-item>
+              </el-carousel>
+            </div>
+          </div>
         </el-card>
-        <logout></logout>
+        <!-- <logout></logout> -->
       </el-main>
     </el-container>
   </div>
@@ -19,5 +27,27 @@
 
 <script setup>
 import infoCard from '@/components/infoCard.vue'
-import logout from '@/components/logoutView.vue'
+//import logout from '@/components/logoutView.vue'
+const imageList = [
+  { src: 'src/assets/image/1.png' },
+  { src: 'src/assets/image/2.png' }
+  // Add more images as needed
+]
 </script>
+<style scoped>
+.container {
+  /* background-image: url('@/assets/image.png'); */
+  height: 600px;
+}
+.carousel-container {
+  height: 500px;
+  width: 1000px;
+}
+/* 轮播图图片样式 */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+</style>
