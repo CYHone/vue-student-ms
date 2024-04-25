@@ -29,10 +29,6 @@
             <i class="el-icon-plus avatar-uploader-icon">点击修改图片</i>
           </el-upload>
         </el-card>
-        <!-- <el-card style="width: 500px">
-          <el-button type="primary" @click="get">得到头像</el-button>
-          <img :src="imageUrl.value" alt="avatar" class="avatar" />
-        </el-card> -->
       </el-main>
     </el-container>
   </div>
@@ -55,32 +51,6 @@ export default {
   }
 }
 </script>
-
-<!-- <script lang="ts" setup>
-import { ref } from 'vue'
-import axios from 'axios'
-
-const imageUrl = ref({
-  value: localStorage.getItem('image') // 初始化为localStorage中存储的图片   :data="{ studentId: studentId }"
-})
-const studentId = localStorage.getItem('id')
-
-// 处理上传成功的回调函数
-const handleAvatarSuccess = (res) => {
-  console.log(res)
-  // 在上传成功后更新imageUrl的值为服务器返回的图片URL
-  imageUrl.value = res.data
-  // 同时存储到localStorage中，以便下次页面加载时使用
-  localStorage.setItem('image', res.data)
-}
-
-const get = () => {
-  axios.post('http://localhost:8080/getAvatar', { studentId: studentId }).then((res) => {
-    console.log(res)
-    console.log(res.data)
-  })
-}
-</script> -->
 
 <style scoped>
 .avatar-uploader .avatar {

@@ -10,8 +10,9 @@ import selectCourse from '@/views/Student/components/selectCourse.vue'
 import courseView from '@/views/Student/components/courseView.vue'
 import gradeView from '@/views/Student/components/gradeView.vue'
 import EchartsView from '@/views/Student/components/EchartsView.vue'
-import showView from '@/views/Student/components/showView.vue'
+// import showView from '@/views/Student/components/showView.vue'
 import avatarView from '@/views/Student/components/avatarView.vue'
+import showCourse from '@/views/Student/components/showCourse.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -50,12 +51,6 @@ const router = createRouter({
           name: 'updateStudentInfo',
           component: updateStudentInfo
         },
-        // {
-        //   path: '/updateImage',
-        //   name: 'updateImage',
-        //   component: updateImage
-        // },
-        // 选课
         {
           path: '/selectCourse',
           name: 'selectCourse',
@@ -79,17 +74,17 @@ const router = createRouter({
           name: 'EchartsView',
           component: EchartsView
         },
-        // 展示
-        {
-          path: '/showView',
-          name: 'showView',
-          component: showView
-        },
         //头像
         {
           path: '/avatarView',
           name: 'avatarView',
           component: avatarView
+        },
+        // 课程展示
+        {
+          path: '/showCourse',
+          name: 'showCourse',
+          component: showCourse
         }
       ]
     }

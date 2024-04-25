@@ -23,11 +23,14 @@
               <el-icon style="color: #ffffff"><Menu /></el-icon
               ><span style="color: #ffffff">选课管理</span>
             </template>
+            <router-link to="/showCourse">
+              <el-menu-item index="2-1">所有课程</el-menu-item>
+            </router-link>
             <router-link to="/selectCourse">
-              <el-menu-item index="2-1">选课</el-menu-item>
+              <el-menu-item index="2-2">选课</el-menu-item>
             </router-link>
             <router-link to="/courseView">
-              <el-menu-item index="2-2">我的课表</el-menu-item>
+              <el-menu-item index="2-3">我的课表</el-menu-item>
             </router-link>
           </el-sub-menu>
           <el-sub-menu index="3">
@@ -48,9 +51,9 @@
             <RouterLink to="/EchartsView">
               <el-menu-item index="4-1">分数统计图</el-menu-item>
             </RouterLink>
-            <RouterLink to="/showView">
+            <!-- <RouterLink to="/showView">
               <el-menu-item index="4-2">展示</el-menu-item>
-            </RouterLink>
+            </RouterLink> -->
           </el-sub-menu>
           <el-sub-menu index="5">
             <template #title>
