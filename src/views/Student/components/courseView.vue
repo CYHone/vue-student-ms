@@ -1,6 +1,6 @@
 <template>
   <h1>我的课程</h1>
-  <el-card>
+  <el-card style="height: 500px">
     <el-table :data="courses" style="width: 100%" max-height="250">
       <el-table-column fixed prop="courseID" label="课程号" width="150" />
       <el-table-column prop="courseName" label="课程名" width="120" />

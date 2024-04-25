@@ -1,6 +1,7 @@
 <template>
+  <h1>选择课程</h1>
   <el-card>
-    <el-table :data="courses" style="width: 100%" max-height="250">
+    <el-table :data="courses" style="width: 100%" max-height="600px">
       <el-table-column fixed prop="courseID" label="课程号" width="150" />
       <el-table-column prop="courseName" label="课程名" width="120" />
       <el-table-column prop="teacherID" label="教师号" width="120" />
@@ -31,7 +32,7 @@ onMounted(() => {
   axios
     .post('student/courses')
     .then((response) => {
-      console.log(response.data)
+      console.log('获取的数据' + response.data)
       courses.value = response.data
     })
     .catch((error) => {

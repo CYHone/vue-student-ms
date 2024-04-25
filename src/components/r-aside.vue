@@ -35,7 +35,9 @@
               <el-icon style="color: #ffffff"><Menu /></el-icon
               ><span style="color: #ffffff">成绩管理</span>
             </template>
-            <el-menu-item index="3-1">成绩查询</el-menu-item>
+            <RouterLink to="/gradeView">
+              <el-menu-item index="3-1">成绩查询</el-menu-item>
+            </RouterLink>
             <el-menu-item index="3-2">Option 2</el-menu-item>
           </el-sub-menu>
           <el-sub-menu index="4">
@@ -43,8 +45,12 @@
               <el-icon style="color: #ffffff"><Menu /></el-icon
               ><span style="color: #ffffff">报表统计</span>
             </template>
-            <el-menu-item index="4-1">Option 1</el-menu-item>
-            <el-menu-item index="4-2">Option 2</el-menu-item>
+            <RouterLink to="/EchartsView">
+              <el-menu-item index="4-1">分数统计图</el-menu-item>
+            </RouterLink>
+            <RouterLink to="/showView">
+              <el-menu-item index="4-2">展示</el-menu-item>
+            </RouterLink>
           </el-sub-menu>
           <el-sub-menu index="5">
             <template #title>
@@ -54,9 +60,12 @@
             <router-link to="/updateStudentInfo">
               <el-menu-item index="5-1">信息修改</el-menu-item>
             </router-link>
-            <router-link to="/updateImage">
+            <!-- <router-link to="/updateImage">
               <el-menu-item index="5-2">头像上传</el-menu-item>
-            </router-link>
+            </router-link> -->
+            <RouterLink to="/avatarView">
+              <el-menu-item index="5-2">头像修改</el-menu-item>
+            </RouterLink>
           </el-sub-menu>
         </el-menu>
       </el-scrollbar>

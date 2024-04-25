@@ -5,9 +5,13 @@ import registerView from '@/views/login/registerView.vue'
 import studentIndex from '@/views/Student/indexView.vue'
 import studentHome from '@/views/Student/homeView.vue'
 import updateStudentInfo from '@/views/Student/components/updateInfo.vue'
-import updateImage from '@/views/Student/components/updateImage.vue'
+// import updateImage from '@/views/Student/components/updateImage.vue'
 import selectCourse from '@/views/Student/components/selectCourse.vue'
 import courseView from '@/views/Student/components/courseView.vue'
+import gradeView from '@/views/Student/components/gradeView.vue'
+import EchartsView from '@/views/Student/components/EchartsView.vue'
+import showView from '@/views/Student/components/showView.vue'
+import avatarView from '@/views/Student/components/avatarView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -46,11 +50,11 @@ const router = createRouter({
           name: 'updateStudentInfo',
           component: updateStudentInfo
         },
-        {
-          path: '/updateImage',
-          name: 'updateImage',
-          component: updateImage
-        },
+        // {
+        //   path: '/updateImage',
+        //   name: 'updateImage',
+        //   component: updateImage
+        // },
         // 选课
         {
           path: '/selectCourse',
@@ -62,6 +66,30 @@ const router = createRouter({
           path: '/courseView',
           name: 'courseView',
           component: courseView
+        },
+        // 成绩
+        {
+          path: '/gradeView',
+          name: 'gradeView',
+          component: gradeView
+        },
+        // 图表
+        {
+          path: '/EchartsView',
+          name: 'EchartsView',
+          component: EchartsView
+        },
+        // 展示
+        {
+          path: '/showView',
+          name: 'showView',
+          component: showView
+        },
+        //头像
+        {
+          path: '/avatarView',
+          name: 'avatarView',
+          component: avatarView
         }
       ]
     }
