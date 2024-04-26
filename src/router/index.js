@@ -13,6 +13,11 @@ import EchartsView from '@/views/Student/components/EchartsView.vue'
 // import showView from '@/views/Student/components/showView.vue'
 import avatarView from '@/views/Student/components/avatarView.vue'
 import showCourse from '@/views/Student/components/showCourse.vue'
+import teacherRegister from '@/views/login/teacherRegister.vue'
+import teacherLogin from '@/views/login/teacherLogin.vue'
+import teacherHome from '@/views/Teacher/teacherHome.vue'
+import teacherIndex from '@/views/Teacher/teacherIndex.vue'
+import updateTeacherInfo from '@/views/Teacher/components/updateTeacherInfo.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -85,6 +90,36 @@ const router = createRouter({
           path: '/showCourse',
           name: 'showCourse',
           component: showCourse
+        }
+      ]
+    },
+    // 教师注册
+    {
+      path: '/teacherRegister',
+      name: 'teacherRegister',
+      component: teacherRegister
+    },
+    // 教师登录
+    {
+      path: '/teacherLogin',
+      name: 'teacherLogin',
+      component: teacherLogin
+    },
+    {
+      // 教师主页
+      path: '/teacherIndex',
+      name: 'teacherIndex',
+      component: teacherIndex,
+      children: [
+        {
+          path: '/teacherHome',
+          name: 'teacherHome',
+          component: teacherHome
+        },
+        {
+          path: '/updateTeacherInfo',
+          name: 'updateTeacherInfo',
+          component: updateTeacherInfo
         }
       ]
     }

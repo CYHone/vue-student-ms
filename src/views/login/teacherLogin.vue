@@ -103,18 +103,19 @@ const submitForm = () => {
     console.log('请求数据' + requestData.email + ' ' + requestData.password)
 
     axios
-      .post('student/login', requestData)
+      .post('teacher/login', requestData)
       .then(function (response) {
         console.log('响应数据：', response.data)
         if (response.data !== null) {
           ElMessage({ type: 'success', message: '登录成功' })
-          localStorage.setItem('name', response.data.name)
+          localStorage.setItem('teacherName', response.data.teacherName)
+          localStorage.setItem('teacherID', response.data.teacherID)
           localStorage.setItem('email', response.data.email)
-          localStorage.setItem('className', response.data.className)
-          localStorage.setItem('phone', response.data.phone)
-          localStorage.setItem('id', response.data.id)
-          localStorage.setItem('image', response.data.avatar)
-          router.push('/studentIndex')
+          localStorage.setItem('phoneNumber', response.data.phoneNumber)
+          const p = localStorage.getItem('phoneNumber')
+          console.log(p)
+          localStorage.setItem('avatar', response.data.avatar)
+          router.push('/teacherIndex')
         } else {
           ElMessage({ type: 'error', message: '登录失败' })
         }

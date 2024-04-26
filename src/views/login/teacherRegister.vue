@@ -4,10 +4,9 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 const ruleForm = ref({
-  id: '',
-  name: '',
-  className: '',
-  phone: '',
+  teacherID: null,
+  teacherName: null,
+  phoneNumber: null,
   email: '',
   password: '',
   confirmPassword: '',
@@ -19,7 +18,7 @@ const sendVerificationCode = () => {
   console.log(encodedEmail)
 
   axios
-    .post('http://127.0.0.1:8080/student/registerCode', encodedEmail, {
+    .post('http://127.0.0.1:8080/teacher/registerCode', encodedEmail, {
       withCredentials: true // 添加这一行配置
     })
     .then((response) => {
@@ -31,15 +30,16 @@ const sendVerificationCode = () => {
 }
 const doRegister = () => {
   console.log(ruleForm.value)
+  //ruleform.value的id强转为Interger
+  ruleForm.value.teacherID = parseInt(ruleForm.value.teacherID)
   axios
-    .post('http://127.0.0.1:8080/student/register', ruleForm.value, {
+    .post('http://127.0.0.1:8080/teacher/register', ruleForm.value, {
       withCredentials: true // 添加这一行配置
     })
     .then((response) => {
       console.log(response.data)
       if (response.data.code === 0) {
         ElMessage({ type: 'success', message: '注册成功' })
-        this.$router.push('/login')
       } else {
         ElMessage({ type: 'error', message: '注册失败' })
       }
@@ -62,26 +62,23 @@ const doRegister = () => {
           <template v-slot:header>
             <div class="clearfix">
               <span style="text-align: center; font-size: 20px; font-family: 'Microsoft YaHei'">
-                <p>学生注册</p>
+                <p>教师注册</p>
               </span>
             </div>
           </template>
 
           <div>
             <el-form :model="ruleForm" :rules="rules" label-width="100px">
-              <el-form-item label="姓名" prop="name">
-                <el-input v-model="ruleForm.name" placeholder="请输入姓名"></el-input>
+              <el-form-item label="姓名" prop="teacherName">
+                <el-input v-model="ruleForm.teacherName" placeholder="请输入姓名"></el-input>
               </el-form-item>
 
-              <el-form-item label="学号" prop="id">
-                <el-input v-model="ruleForm.id" placeholder="请输入学号"></el-input>
-              </el-form-item>
-              <el-form-item label="班级" prop="className">
-                <el-input v-model="ruleForm.className" placeholder="请输入班级"></el-input>
+              <el-form-item label="教师号" prop="teacherID">
+                <el-input v-model="ruleForm.teacherID" placeholder="请输入教师号"></el-input>
               </el-form-item>
 
-              <el-form-item label="手机号" prop="phone">
-                <el-input v-model="ruleForm.phone" placeholder="请输入手机号"></el-input>
+              <el-form-item label="手机号" prop="phoneNumber">
+                <el-input v-model="ruleForm.phoneNumber" placeholder="请输入手机号"></el-input>
               </el-form-item>
 
               <el-form-item label="邮箱" prop="email">
