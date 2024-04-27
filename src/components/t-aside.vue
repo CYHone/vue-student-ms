@@ -41,7 +41,9 @@
               ><span style="color: #ffffff">学生成绩管理</span>
             </template>
 
-            <el-menu-item index="3-1">查询成绩</el-menu-item>
+            <RouterLink to="/inquireGrade">
+              <el-menu-item index="3-1">查询成绩</el-menu-item>
+            </RouterLink>
 
             <RouterLink to="/inputGrade">
               <el-menu-item index="3-2">录入成绩</el-menu-item>
