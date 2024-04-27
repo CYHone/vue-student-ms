@@ -9,6 +9,7 @@
       class="demo-ruleForm"
     >
       <h2>学生信息管理系统</h2>
+      <h3>教师登录</h3>
       <el-form-item label="账号：" prop="email">
         <el-input v-model="ruleForm.email" autocomplete="off" />
       </el-form-item>

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import selectView from '@/views/login/selectView.vue'
 import loginView from '../views/login/loginView.vue'
 import registerView from '@/views/login/registerView.vue'
 //import testView from '../views/login/testView.vue'
@@ -18,15 +19,18 @@ import teacherLogin from '@/views/login/teacherLogin.vue'
 import teacherHome from '@/views/Teacher/teacherHome.vue'
 import teacherIndex from '@/views/Teacher/teacherIndex.vue'
 import updateTeacherInfo from '@/views/Teacher/components/updateTeacherInfo.vue'
+import teacherAvatar from '@/views/Teacher/components/teacherAvatar.vue'
+import teacherCourse from '@/views/Teacher/components/teacherCourse.vue'
+import buildCourse from '@/views/Teacher/components/buildCourse.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       // 随便定义的首页
       path: '/',
-      name: 'index',
-      component: loginView,
-      redirect: '/login'
+      name: 'selectView',
+      component: selectView
+      // redirect: '/login'
     },
     {
       // 登陆页
@@ -120,6 +124,21 @@ const router = createRouter({
           path: '/updateTeacherInfo',
           name: 'updateTeacherInfo',
           component: updateTeacherInfo
+        },
+        {
+          path: '/teacherAvatar',
+          name: 'teacherAvatar',
+          component: teacherAvatar
+        },
+        {
+          path: '/teacherCourse',
+          name: 'teacherCourse',
+          component: teacherCourse
+        },
+        {
+          path: '/buildCourse',
+          name: 'buildCourse',
+          component: buildCourse
         }
       ]
     }

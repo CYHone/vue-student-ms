@@ -13,7 +13,9 @@
               ><span style="color: #ffffff">主页</span>
             </template>
 
-            <el-menu-item index="1-1">信息</el-menu-item>
+            <RouterLink to="/teacherHome">
+              <el-menu-item index="1-1">个人信息</el-menu-item>
+            </RouterLink>
 
             <el-menu-item index="1-2">Option 2</el-menu-item>
           </el-sub-menu>
@@ -21,14 +23,36 @@
           <el-sub-menu index="2">
             <template #title>
               <el-icon style="color: #ffffff"><Menu /></el-icon
-              ><span style="color: #ffffff">选课管理</span>
+              ><span style="color: #ffffff">课程管理</span>
             </template>
 
-            <el-menu-item index="2-1">所有课程</el-menu-item>
+            <RouterLink to="/teacherCourse">
+              <el-menu-item index="2-1">我的课程</el-menu-item>
+            </RouterLink>
 
-            <el-menu-item index="2-2">选课</el-menu-item>
+            <RouterLink to="/buildCourse">
+              <el-menu-item index="2-2">开设课程</el-menu-item>
+            </RouterLink>
+          </el-sub-menu>
 
-            <el-menu-item index="2-3">我的课表</el-menu-item>
+          <el-sub-menu index="3">
+            <template #title>
+              <el-icon style="color: #ffffff"><Menu /></el-icon
+              ><span style="color: #ffffff">学生成绩管理</span>
+            </template>
+
+            <el-menu-item index="3-1">查询成绩</el-menu-item>
+
+            <el-menu-item index="3-2">录入成绩</el-menu-item>
+          </el-sub-menu>
+
+          <el-sub-menu index="4">
+            <template #title>
+              <el-icon style="color: #ffffff"><Menu /></el-icon
+              ><span style="color: #ffffff">报表统计</span>
+            </template>
+
+            <el-menu-item index="4-1">成绩分析</el-menu-item>
           </el-sub-menu>
 
           <el-sub-menu index="5">
@@ -40,7 +64,7 @@
               <el-menu-item index="5-1">信息修改</el-menu-item>
             </router-link>
 
-            <RouterLink to="/avatarView">
+            <RouterLink to="/teacherAvatar">
               <el-menu-item index="5-2">头像修改</el-menu-item>
             </RouterLink>
           </el-sub-menu>
