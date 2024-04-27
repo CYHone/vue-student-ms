@@ -25,6 +25,9 @@ import buildCourse from '@/views/Teacher/components/buildCourse.vue'
 import inputGrade from '@/views/Teacher/components/inputGrade.vue'
 import inquireGrade from '@/views/Teacher/components/inquireGrade.vue'
 import gradeEchart from '@/views/Teacher/components/gradeEchart.vue'
+import adminLogin from '@/views/login/adminLogin.vue'
+import adminIndex from '@/views/Admin/adminIndex.vue'
+import adminHome from '@/views/Admin/adminHome.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -157,6 +160,25 @@ const router = createRouter({
           path: '/gradeEchart',
           name: 'gradeEchart',
           component: gradeEchart
+        }
+      ]
+    },
+    {
+      // 管理员登录
+      path: '/adminLogin',
+      name: 'adminLogin',
+      component: adminLogin
+    },
+    {
+      // 管理员主页
+      path: '/adminIndex',
+      name: 'adminIndex',
+      component: adminIndex,
+      children: [
+        {
+          path: '/adminHome',
+          name: 'adminHome',
+          component: adminHome
         }
       ]
     }
