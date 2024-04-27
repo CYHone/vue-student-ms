@@ -22,6 +22,7 @@ import updateTeacherInfo from '@/views/Teacher/components/updateTeacherInfo.vue'
 import teacherAvatar from '@/views/Teacher/components/teacherAvatar.vue'
 import teacherCourse from '@/views/Teacher/components/teacherCourse.vue'
 import buildCourse from '@/views/Teacher/components/buildCourse.vue'
+import inputGrade from '@/views/Teacher/components/inputGrade.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -139,6 +140,11 @@ const router = createRouter({
           path: '/buildCourse',
           name: 'buildCourse',
           component: buildCourse
+        },
+        {
+          path: '/inputGrade',
+          name: 'inputGrade',
+          component: inputGrade
         }
       ]
     }

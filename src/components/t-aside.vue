@@ -43,7 +43,9 @@
 
             <el-menu-item index="3-1">查询成绩</el-menu-item>
 
-            <el-menu-item index="3-2">录入成绩</el-menu-item>
+            <RouterLink to="/inputGrade">
+              <el-menu-item index="3-2">录入成绩</el-menu-item>
+            </RouterLink>
           </el-sub-menu>
 
           <el-sub-menu index="4">
