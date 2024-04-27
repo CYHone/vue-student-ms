@@ -56,7 +56,9 @@
               ><span style="color: #ffffff">报表统计</span>
             </template>
 
-            <el-menu-item index="4-1">成绩分析</el-menu-item>
+            <RouterLink to="/gradeEchart">
+              <el-menu-item index="4-1">成绩分析</el-menu-item>
+            </RouterLink>
           </el-sub-menu>
 
           <el-sub-menu index="5">
