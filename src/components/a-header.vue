@@ -1,12 +1,8 @@
 <template>
   <div class="header-container">
     <el-icon><House /></el-icon>
-    <span class="class-name">{{ className }} 班 </span>
-    <img style="width: 35px; height: 35px" :src="imageUrl" alt="avatar" />
-    <el-icon><User /></el-icon>
-    <span class="user-name">{{ name }}</span>
-    <el-icon><Message /></el-icon>
-    <span class="user-email">{{ email }}</span>
+    <span class="class-name">admin </span>
+
     <el-icon><SwitchButton /></el-icon>
     <el-button type="text" class="logout-button" @click="out()">退出</el-button>
   </div>
@@ -20,12 +16,6 @@ export default {
       name: null,
       currentTerm: null
     }
-  },
-  created() {
-    this.name = localStorage.getItem('name')
-    this.className = localStorage.getItem('className')
-    this.email = localStorage.getItem('email')
-    this.imageUrl = localStorage.getItem('image')
   },
   methods: {
     out() {

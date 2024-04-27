@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     out() {
-      sessionStorage.clear()
+      localStorage.clear()
       this.$router.push('/')
     }
   }

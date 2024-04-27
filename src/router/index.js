@@ -28,6 +28,8 @@ import gradeEchart from '@/views/Teacher/components/gradeEchart.vue'
 import adminLogin from '@/views/login/adminLogin.vue'
 import adminIndex from '@/views/Admin/adminIndex.vue'
 import adminHome from '@/views/Admin/adminHome.vue'
+import changePassword from '@/views/Admin/components/changePassword.vue'
+import changeStudentPwd from '@/views/Admin/components/changeStudentPwd.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -179,6 +181,16 @@ const router = createRouter({
           path: '/adminHome',
           name: 'adminHome',
           component: adminHome
+        },
+        {
+          path: '/changePassword',
+          name: 'changePassword',
+          component: changePassword
+        },
+        {
+          path: '/changeStudentPwd',
+          name: 'changeStudentPwd',
+          component: changeStudentPwd
         }
       ]
     }

@@ -10,10 +10,10 @@
           border-radius: 3px;
         "
       >
-        <t-header></t-header>
+        <a-header></a-header>
       </el-header>
       <el-container>
-        <t-aside></t-aside>
+        <a-aside></a-aside>
         <el-main>
           <router-view></router-view>
         </el-main>
@@ -23,8 +23,8 @@
 </template>
 
 <script setup>
-import tHeader from '@/components/t-header.vue'
-import tAside from '@/components/t-aside.vue'
+import aHeader from '@/components/a-header.vue'
+import aAside from '@/components/a-aside.vue'
 </script>
 
 <style scoped></style>
