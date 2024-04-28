@@ -32,6 +32,8 @@ import changePassword from '@/views/Admin/components/changePassword.vue'
 import changeStudentPwd from '@/views/Admin/components/changeStudentPwd.vue'
 import inquireStudent from '@/views/Admin/components/inquireStudent.vue'
 import inquireTeacher from '@/views/Admin/components/inquireTeacher.vue'
+import scheduleView from '@/views/Admin/components/scheduleView.vue'
+import scheduleChange from '@/views/Admin/components/scheduleChange.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -203,6 +205,16 @@ const router = createRouter({
           path: '/inquireTeacher',
           name: 'inquireTeacher',
           component: inquireTeacher
+        },
+        {
+          path: '/scheduleView',
+          name: 'scheduleView',
+          component: scheduleView
+        },
+        {
+          path: '/scheduleChange',
+          name: 'scheduleChange',
+          component: scheduleChange
         }
       ]
     }

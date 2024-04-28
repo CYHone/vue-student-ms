@@ -59,7 +59,7 @@
               <el-icon style="color: #ffffff"><Menu /></el-icon
               ><span style="color: #ffffff">课程管理</span>
             </template>
-            <router-link to="/updateTeacherInfo">
+            <router-link to="/scheduleView">
               <el-menu-item index="5-1">排课</el-menu-item>
             </router-link>
           </el-sub-menu>
