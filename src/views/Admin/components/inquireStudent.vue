@@ -47,7 +47,7 @@
     </el-pagination>
   </el-card>
   <el-card>
-    <el-table :data="grades" style="width: 100%" max-height="600px">
+    <el-table :data="courses" style="width: 100%" max-height="600px">
       <el-table-column fixed prop="courseID" label="课程号" width="120" />
       <el-table-column prop="id" label="学号" width="150" />
     </el-table>
