@@ -38,7 +38,7 @@
               ><span style="color: #ffffff">教师档案</span>
             </template>
 
-            <RouterLink to="/inquireGrade">
+            <RouterLink to="/inquireTeacher">
               <el-menu-item index="3-1">查询老师</el-menu-item>
             </RouterLink>
           </el-sub-menu>
@@ -49,7 +49,7 @@
               ><span style="color: #ffffff">学生档案</span>
             </template>
 
-            <RouterLink to="/gradeEchart">
+            <RouterLink to="/inquireStudent">
               <el-menu-item index="4-1">查询学生</el-menu-item>
             </RouterLink>
           </el-sub-menu>

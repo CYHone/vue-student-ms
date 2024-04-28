@@ -30,6 +30,8 @@ import adminIndex from '@/views/Admin/adminIndex.vue'
 import adminHome from '@/views/Admin/adminHome.vue'
 import changePassword from '@/views/Admin/components/changePassword.vue'
 import changeStudentPwd from '@/views/Admin/components/changeStudentPwd.vue'
+import inquireStudent from '@/views/Admin/components/inquireStudent.vue'
+import inquireTeacher from '@/views/Admin/components/inquireTeacher.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -191,6 +193,16 @@ const router = createRouter({
           path: '/changeStudentPwd',
           name: 'changeStudentPwd',
           component: changeStudentPwd
+        },
+        {
+          path: '/inquireStudent',
+          name: 'inquireStudent',
+          component: inquireStudent
+        },
+        {
+          path: '/inquireTeacher',
+          name: 'inquireTeacher',
+          component: inquireTeacher
         }
       ]
     }
