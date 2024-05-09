@@ -13,6 +13,7 @@
       <el-form-item>
         <el-button type="primary" class="login-btn" @click="login">登录</el-button>
         <el-button class="login-btn">重置</el-button>
+        <el-button type="primary" class="login-btn" @click="register">注册</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -36,6 +37,15 @@ const login = () => {
     ElMessage.error('请选择登录身份')
   }
 }
+const register = () => {
+  if (radio.value === 3) {
+    router.push('/register')
+  } else if (radio.value === 6) {
+    router.push('/teacherRegister')
+  } else {
+    ElMessage.error('请选择注册身份')
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -53,7 +63,7 @@ const login = () => {
     border-radius: 5px;
   }
   .login-btn {
-    width: 48%;
+    width: 100px;
   }
 }
 </style>

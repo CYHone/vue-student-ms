@@ -15,7 +15,6 @@
             <router-link to="/studentHome">
               <el-menu-item index="1-1">信息</el-menu-item>
             </router-link>
-            <el-menu-item index="1-2">Option 2</el-menu-item>
           </el-sub-menu>
 
           <el-sub-menu index="2">
@@ -41,7 +40,6 @@
             <RouterLink to="/gradeView">
               <el-menu-item index="3-1">成绩查询</el-menu-item>
             </RouterLink>
-            <el-menu-item index="3-2">Option 2</el-menu-item>
           </el-sub-menu>
           <el-sub-menu index="4">
             <template #title>

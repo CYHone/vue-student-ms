@@ -13,6 +13,38 @@ const ruleForm = ref({
   code: ''
 })
 
+// 添加验证规则
+const rules = {
+  teacherName: [{ required: true, message: '请输入姓名', trigger: 'blur' }],
+  teacherID: [{ required: true, message: '请输入教师号', trigger: 'blur' }],
+  phoneNumber: [
+    { required: true, message: '请输入手机号', trigger: 'blur' },
+    { pattern: /^\d{11}$/, message: '请输入正确的手机号', trigger: 'blur' }
+  ],
+  email: [
+    { required: true, message: '请输入邮箱', trigger: 'blur' },
+    { type: 'email', message: '请输入正确的邮箱格式', trigger: 'blur' }
+  ],
+  password: [
+    { required: true, message: '请输入密码', trigger: 'blur' },
+    { min: 6, message: '密码长度不能少于6位', trigger: 'blur' }
+  ],
+  confirmPassword: [
+    { required: true, message: '请确认密码', trigger: 'blur' },
+    {
+      validator: (rule, value, callback) => {
+        if (value === ruleForm.value.password) {
+          callback()
+        } else {
+          callback(new Error('两次输入的密码不一致'))
+        }
+      },
+      trigger: 'blur'
+    }
+  ],
+  code: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
+}
+
 const sendVerificationCode = () => {
   const encodedEmail = encodeURIComponent(ruleForm.value.email)
   console.log(encodedEmail)

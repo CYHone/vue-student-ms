@@ -16,8 +16,6 @@
             <RouterLink to="/teacherHome">
               <el-menu-item index="1-1">个人信息</el-menu-item>
             </RouterLink>
-
-            <el-menu-item index="1-2">Option 2</el-menu-item>
           </el-sub-menu>
 
           <el-sub-menu index="2">
