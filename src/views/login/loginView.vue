@@ -115,7 +115,7 @@ const submitForm = () => {
           localStorage.setItem('phone', response.data.phone)
           localStorage.setItem('id', response.data.id)
           localStorage.setItem('image', response.data.avatar)
-          router.push('/studentIndex')
+          router.push('/studentHome')
         } else {
           ElMessage({ type: 'error', message: '登录失败' })
         }

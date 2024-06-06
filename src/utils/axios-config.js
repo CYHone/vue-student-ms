@@ -4,7 +4,7 @@ import axios from 'axios'
 const instance = axios.create({
   //Nodejs提供一个全局变量process
 
-  baseURL: 'http://127.0.0.1:8080/', // 设置基础URL
+  baseURL: 'http://localhost:8080/', // 设置基础URL
 
   //Nodejs提供一个全局变量process
 
